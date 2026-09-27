@@ -8,10 +8,7 @@ export default function FinalProtocol() {
             id="final-protocol"
             className="relative mt-100 flex min-h-screen items-center justify-center overflow-hidden bg-[#090a0c] text-white"
         >
-            {/* Background glow */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(230,36,41,0.12),transparent_65%)]" />
-
-            {/* Grid */}
             <div
                 className="absolute inset-0 opacity-[0.04]"
                 style={{

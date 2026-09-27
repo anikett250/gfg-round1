@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Suspense, useRef } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, useGLTF } from "@react-three/drei";
 import type { Group } from "three";
@@ -48,10 +48,14 @@ function Mark85Model({ onAnimationComplete }: { onAnimationComplete: () => void 
   );
 }
 
-useGLTF.preload("/iron-man_mark_85.glb");
-
 export default function Header() {
   const [showLabels, setShowLabels] = useState(false);
+  const [modelReady, setModelReady] = useState(false);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setModelReady(true), 0);
+    return () => window.clearTimeout(timer);
+  }, []);
 
     return (
         <main id="top" className="h-screen overflow-hidden bg-[#090a0c]">
@@ -60,7 +64,7 @@ export default function Header() {
                 <directionalLight position={[3, 5, 4]} intensity={4} color="#fff0dc" />
                 <directionalLight position={[-4, 2, 2]} intensity={2.5} color="#d94032" />
                 <Suspense fallback={null}>
-                  <Mark85Model onAnimationComplete={() => setShowLabels(true)} />
+                  {modelReady && <Mark85Model onAnimationComplete={() => setShowLabels(true)} />}
                     <Environment preset="city" />
                 </Suspense>
             </Canvas>

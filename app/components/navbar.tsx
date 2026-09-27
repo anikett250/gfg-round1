@@ -7,10 +7,10 @@ export default function Navbar(){
                     STARK INDUSTRIES
                 </a>
                 <div className="hidden items-center gap-9 text-[10px] font-semibold uppercase tracking-[0.24em] text-white/55 sm:flex">
-                    <a className="text-white" href="#mission">Mission</a>
-                    <a className="transition-colors hover:text-white" href="#armor">Armor</a>
-                    <a className="transition-colors hover:text-white" href="#systems">Systems</a>
-                    <a className="transition-colors hover:text-white" href="#event">Event</a>
+                    <a className="text-white" href="#top">Mission</a>
+                    <a className="transition-colors hover:text-white" href="#arc-reactor">Armor</a>
+                    <a className="transition-colors hover:text-white" href="#friday-ai">Systems</a>
+                    <a className="transition-colors hover:text-white" href="#final-protocol">Event</a>
                 </div>
                 <div className="flex items-center gap-2 text-[9px] uppercase tracking-[0.18em] text-white/50">
                     <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#f05a47]" />
